@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Question for Nishita...</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://media.tenor.com/2U54R8_U9iAAAAAi/peach-cat-goma.gif" alt="Cute proposal bear" class="gif">
+        
+        <h1 class="header_text">Nishita, will you marry me? 💍</h1>
+        <p class="sub-text">Abhijay is asking...</p>
+        
+        <div class="buttons">
+            <button class="yes-button" onclick="handleYesClick()">YES!</button>
+            <button class="no-button" onclick="handleNoClick()">No</button>
+        </div>
+    </div>
+
+    <script>
+        const messages = [
+            "Are you sure, Nishita?",
+            "Really sure?",
+            "Think about our Pickleball team!",
+            "I'll let you win every game!",
+            "We'll have the best home in Jaipur!",
+            "I'll design all the furniture specially for you!",
+            "Don't break my heart!",
+            "I'll cook your favorite food!",
+            "But we are perfect together!",
+            "Please?",
+            "Abhijay loves you so much!",
+            "Okay, last chance!",
+            "You can't say no to this face!",
+            "Just say Yes already! ❤️",
+        ];
+
+        let messageIndex = 0;
+
+        function handleNoClick() {
+            const noButton = document.querySelector('.no-button');
+            const yesButton = document.querySelector('.yes-button');
+            
+            // Change the No button text
+            noButton.textContent = messages[messageIndex];
+            messageIndex = (messageIndex + 1) % messages.length;
+            
+            // Increase the Yes button font size
+            const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+            yesButton.style.fontSize = `${currentSize * 1.5}px`;
+        }
+
+        function handleYesClick() {
+            window.location.href = "yes_page.html";
+        }
+    </script>
+</body>
+</html>
